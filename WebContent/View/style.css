@@ -1,0 +1,26 @@
+#form-inscription {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  width: 30%;
+  margin-left: 33%;
+  padding : 1em;
+}
+
+#form-house {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  width: 60%;
+  margin-left: 20%;
+  padding : 1.6em;
+}
+
+.btn-primary{
+  width:100%;
+}
+
+.form-group{
+  margin-top: 0;
+}
+.infos-persos{
+  text-align: center;
+}
