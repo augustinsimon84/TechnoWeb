@@ -1,12 +1,15 @@
 package com.login;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.login.dao.LoginDao;
 
 
 @WebServlet("/Login")
@@ -16,8 +19,9 @@ public class Login extends HttpServlet {
 			String identifiant=request.getParameter("identifiant");
 			String mdp=request.getParameter("mdp");
 			
+			LoginDao dao = new LoginDao();
 			
-			if(identifiant.equals("a@b.fr") && mdp.equals("t"))
+			if(dao.check(identifiant, mdp))
 			{
 				HttpSession session = request.getSession();
 				session.setAttribute("identifiant", identifiant);
