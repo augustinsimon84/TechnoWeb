@@ -40,7 +40,7 @@
         <form action="Login" method="post">
           <!-- email -->
           <div class="form-group">
-            <input name="identifiant" type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email Address">
+            <input name="email" type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email Address">
           </div>
           
           <!-- Nom Prénom -->

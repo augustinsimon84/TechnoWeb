@@ -36,35 +36,79 @@
       </div>
       </nav>
 
-    <div id="forms">
+<div id="forms">
       <div id="form-inscription" class="border">
-        <form>
+        <form name="form" action="RegisterServlet" method="post" onsubmit="return validate()">
+        
         <div class="form-group">
-          <input type="text" class="form-control" id="lname" placeholder="Nom">
+          <input name="nom" type="text" class="form-control" id="lname" placeholder="Nom">
         </div>
+        
         <div class="form-group">
-          <input type="text" class="form-control" id="fname" placeholder="Prénom">
+          <input name="prenom" type="text" class="form-control" id="fname" placeholder="Prénom">
         </div>
+        
         <div class="form-group">
-          <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email Address">
+          <input name="email" type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email Address">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
+        
         <div class="form-group">
-          <input type="text" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="N° Téléphone">
+          <input name="telephone" type="text" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="N° Téléphone">
         </div>
+        
         <div class="form-group">
-          <input type="password" class="form-control" id="pass" placeholder="Password">
+          <input name="password" type="password" class="form-control" id="pass" placeholder="Password">
         </div>
+        
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
+        
         <button class="btn btn-primary" onclick="test()" >Continuer</button>
     </form>
 </div>
 </div>
 
 <script>
+
+function validate()
+{ 
+ var fullname = document.form.fullname.value;
+ var email = document.form.email.value;
+ var username = document.form.username.value; 
+ var password = document.form.password.value;
+ var conpassword= document.form.conpassword.value;
+ 
+ if (fullname==null || fullname=="")
+ { 
+ alert("Full Name can't be blank"); 
+ return false; 
+ }
+ else if (email==null || email=="")
+ { 
+ alert("Email can't be blank"); 
+ return false; 
+ }
+ else if (username==null || username=="")
+ { 
+ alert("Username can't be blank"); 
+ return false; 
+ }
+ else if(password.length<6)
+ { 
+ alert("Password must be at least 6 characters long."); 
+ return false; 
+ } 
+ else if (password!=conpassword)
+ { 
+ alert("Confirm Password should match with the Password"); 
+ return false; 
+ } 
+ } 
+
+
   function test(){
   var myElement = $("#forms");
     myElement.html("<form id ='form-house' class='border'>"+

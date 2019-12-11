@@ -1,3 +1,4 @@
+ 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,13 +13,14 @@
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	
 	
-		if(session.getAttribute("identifiant")==null)
+		if(session.getAttribute("email")==null)
 		{
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("login.jsp"); 
 		}
+		
 %>
 
-	Bienvenue ${username}
+	Bienvenue ${email}
 	<form action= "Logout">
 		<input type="submit" value="Logout">
 	</form>
