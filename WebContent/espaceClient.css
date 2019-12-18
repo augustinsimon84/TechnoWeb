@@ -8,40 +8,12 @@ body {
   box-sizing: border-box;
 }
 
-.logonav{
-  position: absolute;
-  height: 61px;
-  left: 10px;
-  top: 20px;
-  opacity:1;
-}
-
 .logonav2{
   position: absolute;
   height: 61px;
   left: 10px;
   top: 20px;
   opacity:1;
-}
-nav.black .logonav{
-  position: absolute;
-  height: 61px;
-  left: 10px;
-  top: 20px;
-  opacity:1;
-}
-
-nav.black .logonav2{
-  position: absolute;
-  height: 61px;
-  left: 10px;
-  top: 20px;
-  opacity:1;
-}
-
-
-nav.black .logonav{
-  background-position: 0 -60px;
 }
 
 nav {
@@ -60,12 +32,9 @@ nav ul{
 
 }
 
-
 nav ul li{
   list-style: none;
-
 }
-
 
 nav ul li a{
   line-height: 60px;
@@ -75,59 +44,12 @@ nav ul li a{
   text-decoration: none;
 }
 
-
-.login{
-  border: 2px solid ;
-  border-radius:  3px;
-  border-color: white;
-}
-
-
-nav.black{
-  background: rgba(255,255,255,0.8);
-  transition: 2.5s;
-}
-
-nav.black ul li a{
-  line-height: 60px;
-  color:  #262626;
-  padding: 5px 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 2.5s;
-}
-
-nav.black .login{
-  border: 2px solid ;
-  border-radius:  3px;
-  border-color: black;
-}
-
-
-
-nav.black a:hover {
+nav a:hover {
   transition: .5s;
   color:#A58D8F;
 }
 
-
-nav a:hover {
-  transition: .5s;
-  color:#FAE6E6;
-}
-
-
-/* Add a black background color to the top navigation */
-nav  {
-  width: 100%;
-  overflow: hidden;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  padding:20px 50px;
-  box-sizing: border-box;
-  transition: .5;
-}
+*
 .emp-profile{
     padding: 3%;
     margin-top: 3%;

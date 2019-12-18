@@ -142,3 +142,45 @@ hgroup h2.lead {
 	margin: 0 15px;
 	border-bottom: 1px dotted #ccc;
 }
+
+
+.logonav2{
+  position: absolute;
+  height: 61px;
+  left: 10px;
+  top: 20px;
+  opacity:1;
+}
+
+nav {
+  font-family: Arial;
+    background: rgba(255,255,255,0);
+    overflow: hidden;
+    z-index: 2;
+    overflow: hidden;
+}
+
+nav ul{
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+}
+
+nav ul li{
+  list-style: none;
+}
+
+nav ul li a{
+  line-height: 60px;
+  color:  #000000;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav a:hover {
+  transition: .5s;
+  color:#FAE6E6;
+}

@@ -30,27 +30,23 @@
 %>
 
 	
-	<div id="slide" class="randomBg">
+<nav>
+	<div>
+		<a href="index.html"><img class="logonav2"
+			src="View/images/logo.png"></a>
 
 
-		<!-- Navigation bar-->
-		<nav>
-			<div>
-				<a href="accueil.html"><img class="logonav2"
-					src="View/images/logo.png"></a>
-
-
-				<ul>
-					<li><a href="#news">News</a></li>
-					<li><a href="search.html">Search</a></li>
-					<li><form action= "Logout">
-							<input type="submit" value="Logout">
-						</form></li>
+		<ul>
+			<li><a href="#news">News</a></li>
+			<li><a href="search.html">Search</a></li>
+			<li><form action= "Logout">
+					<input type="submit" value="Logout">
+				</form></li>
 					
-				</ul>
-			</div>
-		</nav>
+		</ul>
 	</div>
+</nav>
+	
 	
 		
 	
@@ -65,7 +61,7 @@
 				</div>
 				<div class="col-md-6">
 					<div class="profile-head">
-					Bienvenu
+					Bienvenue
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item"><a class="nav-link active"
 								id="home-tab" data-toggle="tab" href="#home" role="tab"
