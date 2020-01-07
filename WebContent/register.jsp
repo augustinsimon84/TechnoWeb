@@ -14,7 +14,7 @@
 
 <nav>
 			<div>
-				<a href="accueil.html"><img class="logonav2"
+				<a href="index.html"><img class="logonav2"
 					src="View/images/logo.png"></a>
 
 

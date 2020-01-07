@@ -1,0 +1,33 @@
+#form-house {
+  padding : 1.6em;
+}
+
+.btn-primary{
+  width:100%;
+}
+
+.form-group{
+  margin-top: 0;
+}
+.infos-persos{
+  text-align: center;
+}
+
+#fond_noir{
+	top: 0%;
+	left : 0%;
+	display: none;
+	width: 100%;
+	height: 150%;
+	position: absolute;
+	background-color:rgba(0, 0, 0, 0.7);
+}
+
+#popup_ajouter_home{
+	display: none;
+
+	width: 60%;
+	background-color : white;
+	position:absolute;
+
+}
