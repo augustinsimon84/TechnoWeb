@@ -4,12 +4,25 @@
   width: 30%;
   margin-left: 33%;
   padding : 2em;
+  opacity:2;
 }
-
+#form-conexion.border {
+  background-color: #ffffff;
+  box-shadow: 10px 10px 8px #000000;
+  opacity:0.8;
+}
 #connectbutton {
-	color: #ffffff;
+  color: #ffffff;
 }
 
+
+
+body{
+	background-image:url("View/images/co.jpg");
+	background-size: 2000px 1000px;
+	background-repeat: no-repeat;
+	
+}
 
 .logonav2{
   position: absolute;
