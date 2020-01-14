@@ -5,8 +5,9 @@ import java.sql.DriverManager;
 import java.sql.*;
 
 public class RegisterDao {
-	String sql = "INSERT INTO login(email, pass, nom, prenom, telephone) values(?, ?, ?, ?, ?)";
-	String url = "jdbc:mysql://localhost:3306/bddtest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	String sql = "INSERT INTO login(email, pass, nom, prenom, telephone) VALUES(?, ?, ?, ?, ?)";
+	//String url = "jdbc:mysql://localhost:8889/bddtest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	String url = "jdbc:mysql://localhost:8889/bddtest";
 	String username = "root";
 	String password = "root";
 	

@@ -17,6 +17,7 @@ import com.login.dao.LoginDao;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter("email");
@@ -29,6 +30,7 @@ public class Login extends HttpServlet {
 		{
 			HttpSession session = request.getSession();
 			session.setAttribute("email", email);
+			System.out.println(session.getAttribute("email"));
 			response.sendRedirect("espaceClient.jsp");
 
 		}
@@ -37,6 +39,4 @@ public class Login extends HttpServlet {
 			response.sendRedirect("login.jsp");
 		}
 	}
-
-	
 }
