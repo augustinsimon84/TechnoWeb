@@ -14,16 +14,20 @@
 
 <nav>
 			<div>
-				<a href="index.html"><img class="logonav2"
+				<a href="index.jsp"><img class="logonav2"
 					src="View/images/logo.png"></a>
 
 
 				<ul>
 					<li><a href="#news">News</a></li>
-					<li><a href="search.html">Search</a></li>
-					<li><form action= "Logout">
-							<input type="submit" value="Logout">
-						</form></li>
+					<li><a href="search.jsp">Search</a></li>
+					<li>
+						<% if (session.getAttribute("email") == null) { %>
+							<a href="login.jsp" class="login">Login</a>
+						<% } else { %>
+							<a href="espaceClient.jsp" class="login">Espace client</a>
+						<% } %>
+					</li>
 					
 				</ul>
 			</div>

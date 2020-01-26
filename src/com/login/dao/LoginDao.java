@@ -34,10 +34,11 @@ public class LoginDao
 		} catch (ClassNotFoundException e) {
 			
 		    throw new IllegalStateException("Cannot find the driver in the classpath!", e);
-		}
 		
+		}
 		try (Connection con = DriverManager.getConnection(url, username, password)) {
-		    System.out.println("Database connected!");
+		    
+			System.out.println("Database connected!");
 		    
 		    PreparedStatement st = con.prepareStatement(sql);
 			

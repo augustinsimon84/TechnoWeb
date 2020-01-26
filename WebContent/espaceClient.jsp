@@ -1,7 +1,11 @@
  
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.sql.*"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.io.*"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.ptheron.ir.dto.ImageDto" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,16 +43,13 @@
 	
 <nav>
 	<div>
-		<a href="index.html"><img class="logonav2"
-			src="View/images/logo.png"></a>
+		<a href="index.jsp"><img class="logonav2" src="View/images/logo.png"></a>
 
 
 		<ul>
 			<li><a href="#news">News</a></li>
-			<li><a href="search.html">Search</a></li>
-			<li><form action= "Logout">
-					<input type="submit" value="Logout">
-				</form></li>
+			<li><a href="search.jsp">Search</a></li>
+			<li><a href="./Logout" class="login">Logout</a></li>
 					
 		</ul>
 	</div>
@@ -94,10 +95,12 @@
   									<line x1="0" y1="0" x2="870" y2="0"
 									style="stroke:rgb(150,150,150);stroke-width:1" />
 							</svg>
+							
 							<div class="row">
 								<div class="col-md-6">
 									<label>Name</label>
 								</div>
+								
 								<div class="col-md-6">
 									<% 
 									
@@ -127,9 +130,9 @@
 							</div>
 							
 							<svg height="1" width="5000">
-  									<line x1="0" y1="0" x2="870" y2="0"
-									style="stroke:rgb(150,150,150);stroke-width:1" />
+  									<line x1="0" y1="0" x2="870" y2="0" style="stroke:rgb(150,150,150);stroke-width:1" />
 							</svg>
+							
 							<div class="row">
 								<div class="col-md-6">
 									<label>Email</label>
@@ -161,10 +164,48 @@
   									<line x1="0" y1="0" x2="870" y2="0"
 									style="stroke:rgb(150,150,150);stroke-width:1" />
 							</svg>
-						
-							
+												
 						</div>
-
+						
+						<div class="col-md-6">
+							<label>My houses</label>
+						</div>
+                        
+                        <div>                         
+                                 
+                                    <% 
+                                    ResultSet resultSet3 = null;
+ 
+                                    String sql3 = "SELECT * FROM houses WHERE id_user=(SELECT id_user FROM login WHERE email="+"'"+emailSession+"')"; 
+ 
+                                    PreparedStatement pst3 = con.prepareStatement(sql3);
+                                    resultSet3 = pst3.executeQuery();
+                                    
+                                    while(resultSet3.next()) {
+                                    
+                                    %> 
+                                    
+                                    <div>
+                                    <tr>                                    
+                                    	<td>
+                                    		<img src="./DownloadImage" width="100px" height="70px">
+                                    	</td>
+                                        <td><%=resultSet3.getString("type") %></td>
+                                        <td> de </td>
+                                        <td><%=resultSet3.getString("superficie") %></td>
+                                        <td>m2</td>
+                                        <td> - </td>
+                                        <td><%=resultSet3.getString("ville") %></td>                                  
+                                        <td><%=resultSet3.getString("code_postal") %></td>
+                                        <td> - </td>                                  
+                                        <td><%=resultSet3.getString("pays") %></td>
+                                        
+                                    </tr>
+                                    </div>
+                                    <% } %>
+                                    
+                                    <a href="./ImageViewerController">Voir tableau maisons</a>                                                                        
+						</div>
 					</div>
 				</div>
 			</div>
@@ -185,7 +226,7 @@
             
 			<div id="body_popup_ajouter_home">
 				<!--<form action ="${pageContext.request.contextPath}/Add_Home" id ='form-house' class='border' method="post">-->
-				<form action ="AddProperty" id ='form-house' class='border' method="post">
+				<form action ="AddProperty" id ='form-house' class='border' method="post" enctype="multipart/form-data">
 				  
 				  <div class='form-row'>
 					
@@ -234,11 +275,12 @@
 					
 				  </div>
 				  <p>Photos</p>
-				  
+				  <!--  
 				  <div class='custom-file'>
-					<label class='custom-file-label' for='customFile'>Choose file</label>
-					<input type='file' class='custom-file-input' id='customFile' multiple>
-				  </div>
+					<label class='custom-file-label' for='customFile'>Choisissez un fichier</label>
+					<input name='photo' type='file' class='custom-file-input' id='customFile'>
+				  </div>-->
+				  <input type="file" name="myimg" required/>
 				  
 				  <div class='form-group'>
 					<div class='form-check'>

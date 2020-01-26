@@ -42,7 +42,20 @@ nav ul li a{
   padding: 5px 20px;
   text-transform: uppercase;
   text-decoration: none;
+ }
+ 
+ .login{
+  border: 2px solid ;
+  border-radius:  3px;
+  border-color: white;
 }
+ 
+nav.black .login{
+  border: 2px solid ;
+  border-radius:  3px;
+  border-color: black;
+}
+
 
 nav a:hover {
   transition: .5s;
